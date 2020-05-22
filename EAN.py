@@ -12,9 +12,6 @@ driver = webdriver.Chrome(Path)
 
 driver.get("https://mygs1.gs1uk.org/My-GS1/checkout.ssp?is=login&login=T&origin=customercenter#login-register")
 
-MyUserName = "martin.burrage@cmsdistribution.com"
-MyPassword = "Harrogate"
-
 attempt = 0
 while attempt < 10:
     try:
