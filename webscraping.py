@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 Path = "C:\Program Files JN\chromedriver.exe"
-
 driver = webdriver.Chrome(Path)
 
 driver.get("https://techwithtim.net")
@@ -29,8 +28,6 @@ try:
     print(header.text)
 finally:
     driver.quit()
-
-
 
 
 
