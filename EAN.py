@@ -50,13 +50,22 @@ CompanyPrefixNo.send_keys(Keys.RETURN)
 
 GoToNumberbankBtn = driver.find_element_by_class_name('buttonOrange')
 GoToNumberbankBtn.click()
-
-UseNextNumber = Select(driver.find_element_by_class_name('buttonOrange'))
-UseNextNumber.click()
+                                    
 
 
+UseNextNumber = driver.find_element_by_xpath("//*[@id='content']").click()
+print("test")
+# UseNextNumber = driver.find_element_by_xpath('//*[@id="content"]/div/div/div[5]/div/div/div[4]/a[1]')
+# UseNextNumber.click()
 
-print("DONE!!")
+# UseNextNumber = driver.find_element_by_xpath(//div[@class='buttonOrange' and text()='Use next number'])
+# UseNextNumber.click()
+
+#//*[@id="content"]/div/div/div[5]/div/div/div[4]/a[1]
+
+#(//div[@class='buttonOrange' and text()='Use next number'])
+
+
 
 
 
