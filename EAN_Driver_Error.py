@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import Select
 import openpyxl
 import numpy as np
 import os
-            import smtplib
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
@@ -25,7 +25,7 @@ class GetEANCode():
         self.url = url 
         self.MyUserName = MyUserName or  "martin.burrage@cmsdistribution.com"
         self.password = password or "Harrogate"
-        self.ChromeDriverPath = ChromeDriverPath or r"C:\Program Files old driver\chromedriver_old.exe"
+        self.ChromeDriverPath = ChromeDriverPath or r"C:\Program Files JN\chromedriver.exe"
         self.ExcelDir = ExcelDir
         self.fileName = fileName
         self.excelPath = self.ExcelDir + '\\' + self.fileName + '.xlsx'
@@ -39,25 +39,25 @@ class GetEANCode():
             
         except Exception:
  
-body =  f""" <html>
+            body =  f""" <html>
                         <div class="container" style="background-color: #CC2026;">
                             <br> <br> 
-                            <h1>The system failed to operate due to an error with the Chrome Driver. Please update the Chrome Driver being used</h1>
+                            <h1>The system failed to operate due to an error with the Chrome Driver. Please update the Chrome Driver being used.</h1>
                     
                             <br>
                         </div>
  
                     </html>
                 """
-s = smtplib.SMTP('es12app2.corp.cmsdistribution.com:25')
-msg = MIMEMultipart('alternative')
-html  = MIMEText(body, 'html')
-msg.attach(html)
-msg['Subject'] = "Chrome Driver Error"   
-msg['To'] = ", ".join("jonathan.nyland@cmsdistribution")
-msg['html'] = body
+            s = smtplib.SMTP('es12app2.corp.cmsdistribution.com:25')
+            msg = MIMEMultipart('alternative')
+            html  = MIMEText(body, 'html')
+            msg.attach(html)
+            msg['Subject'] = "Chrome Driver Error"   
+            msg['To'] = ", ".join("jonathan.nyland@cmsdistribution")
+            msg['html'] = body
  
-s.sendmail("winshuttle@cms.com", "jonathan.nyland@cmsdistribution.com", msg.as_string())
+            s.sendmail("winshuttle@cms.com", "jonathan.nyland@cmsdistribution.com", msg.as_string())
         
 
         driver.get(self.url)
